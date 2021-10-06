@@ -8,6 +8,9 @@ class Category(models.Model):
     """ 
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.name
+
 class Location(models.Model):
     """This defines the location table and all its contents and behaviours
 
@@ -15,6 +18,9 @@ class Location(models.Model):
         models ([module]): [This is where we import the model functionality]
     """ 
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 class Image(models.Model):
     """This defines the image table and all its contents and behaviours
@@ -28,3 +34,6 @@ class Image(models.Model):
     descriptions = models.TextField(blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
