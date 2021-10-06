@@ -23,7 +23,7 @@ class Image(models.Model):
         models ([module]): [This is where we import the model functionality]
     """ 
     name = models.CharField(max_length=50)
-    # image_path = models.TextField(upload_to = 'articles/')
+    image_path = models.ImageField(upload_to = 'articles/',blank=True)
     date_taken = models.DateTimeField()
     descriptions = models.TextField(blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
