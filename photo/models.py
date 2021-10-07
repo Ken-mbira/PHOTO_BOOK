@@ -7,7 +7,7 @@ class Category(models.Model):
         models ([module]): [This is where we import the model functionality]
     """ 
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=100,blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
