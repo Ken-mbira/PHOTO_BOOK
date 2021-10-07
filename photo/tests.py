@@ -58,6 +58,15 @@ class TestImage(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
 
+    def test_update_image(self):
+        """This will test the method to update an image's records
+        """
+        self.graduation.save_image()
+        new_image_record = Image(name = 'marriage', image_path="anotherlocation", date_taken = datetime.date(2000,4,10),descriptions = 'This is a picture taken during my graduation',category = self.category,location = self.location)
+        Image.update_image(self.graduation,new_image_record)
+
+        self.assertEqual(self.graduation.name,'marriage')
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()

@@ -66,3 +66,14 @@ class Image(models.Model):
             id ([type]): [description]
         """
         self.delete()
+
+    def update_image(old,new):
+        """This method will update a record of an image
+        """
+        old.name = new.name
+        old.image_path = new.image_path
+        old.date_taken = new.date_taken
+        old.descriptions = new.descriptions
+        old.category = new.category
+        old.location = new.location
+        old.save()
