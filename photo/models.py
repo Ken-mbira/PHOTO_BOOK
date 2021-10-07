@@ -67,13 +67,13 @@ class Image(models.Model):
         """
         self.delete()
 
-    def update_image(old,new):
+    def update_image(self,new):
         """This method will update a record of an image
         """
-        old.name = new.name
-        old.image_path = new.image_path
-        old.date_taken = new.date_taken
-        old.descriptions = new.descriptions
-        old.category = new.category
-        old.location = new.location
-        old.save()
+        self.name = new.name
+        self.image_path = new.image_path
+        self.date_taken = new.date_taken
+        self.descriptions = new.descriptions
+        self.category = new.category
+        self.location = new.location
+        self.save()

@@ -63,7 +63,7 @@ class TestImage(TestCase):
         """
         self.graduation.save_image()
         new_image_record = Image(name = 'marriage', image_path="anotherlocation", date_taken = datetime.date(2000,4,10),descriptions = 'This is a picture taken during my graduation',category = self.category,location = self.location)
-        Image.update_image(self.graduation,new_image_record)
+        self.graduation.update_image(new_image_record)
 
         self.assertEqual(self.graduation.name,'marriage')
 
