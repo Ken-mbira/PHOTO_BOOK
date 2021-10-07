@@ -58,3 +58,11 @@ class Image(models.Model):
         image = Image.objects.get(pk = id)
 
         return image
+
+    def delete_image(self):
+        """This deletes the image from the database using its pk
+
+        Args:
+            id ([type]): [description]
+        """
+        self.delete()

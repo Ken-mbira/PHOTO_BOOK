@@ -49,6 +49,15 @@ class TestImage(TestCase):
         image = Image.get_image_by_id(1)
         self.assertEqual(image.pk,self.graduation.pk)
 
+    def test_delete_image(self):
+        """
+        This will test that an image can be deleted from the database given its id"""
+        self.graduation.save_image()
+        self.graduation.delete_image()
+
+        images = Image.objects.all()
+        self.assertTrue(len(images) == 0)
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()
