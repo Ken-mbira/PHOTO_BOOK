@@ -65,3 +65,11 @@ class TestLocation(TestCase):
         """This tests whether a created location is an instance of the location class
         """
         self.assertTrue(isinstance(self.location,Location))
+
+    def test_save_location(self):
+        """This checks if a location can be saved to the database
+        """
+        self.location.save_location()
+        locations = Location.objects.all()
+
+        self.assertTrue(len(locations) > 0)
