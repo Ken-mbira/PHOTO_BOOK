@@ -7,6 +7,7 @@ class Category(models.Model):
         models ([module]): [This is where we import the model functionality]
     """ 
     name = models.CharField(max_length=50)
+    description = models.CharField(max_length=100,blank=True)
 
     def __str__(self):
         return self.name
@@ -37,3 +38,8 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save_image(self):
+        """This saves and image instance to the database
+        """
+        self.save()
