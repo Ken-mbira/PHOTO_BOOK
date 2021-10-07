@@ -11,6 +11,7 @@ class TestImage(TestCase):
     """
     def setUp(self):
         """This will run before every other test does"""
+        self.location = Location(name = 'Kiserian')
         self.graduation = Image(name = 'Graduation', image_path="location", date_taken = datetime.date(2020,1,12),descriptions = 'This is a picture taken during my graduation')
 
     def test_instance(self):
@@ -18,12 +19,10 @@ class TestImage(TestCase):
         """
         self.assertTrue(isinstance(self.graduation,Image))
 
-    # def test_save_image(self):
-    #     """This tests whether an image can be saved to the database
-    #     """
-    #     self.graduation.save_image()
-    #     images = Image.objects.all()
-    #     self.AssertTrue(len(images) > 1)
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
 
 
 class TestCategory(TestCase):
@@ -50,6 +49,11 @@ class TestCategory(TestCase):
 
         self.assertTrue(len(categories) > 0)
 
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+
 class TestLocation(TestCase):
     """This defines tests for the behaviours of the location class
 
@@ -73,3 +77,8 @@ class TestLocation(TestCase):
         locations = Location.objects.all()
 
         self.assertTrue(len(locations) > 0)
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
