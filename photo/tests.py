@@ -41,3 +41,11 @@ class TestCategory(TestCase):
         """This will test if the the category is an instance of the category class
         """
         self.assertTrue(isinstance(self.category1,Category))
+
+    def test_save_category(self):
+        """This tests whether a new category can be saved to the database
+        """
+        self.category1.save_category()
+        categories = Category.objects.all()
+
+        self.assertTrue(len(categories) > 0)
