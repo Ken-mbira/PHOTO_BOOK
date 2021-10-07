@@ -42,6 +42,13 @@ class TestImage(TestCase):
         """
         self.assertTrue(self.graduation.location == self.location)
 
+    def test_get_image_by_id(self):
+        """This will test if one can get an image by the id
+        """
+        self.graduation.save_image()
+        image = Image.get_image_by_id(1)
+        self.assertEqual(image.pk,self.graduation.pk)
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()

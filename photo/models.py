@@ -53,3 +53,8 @@ class Image(models.Model):
         """This saves and image instance to the database
         """
         self.save()
+
+    def get_image_by_id(id):
+        image = Image.objects.get(pk = id)
+
+        return image
