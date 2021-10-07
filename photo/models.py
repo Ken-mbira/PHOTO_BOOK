@@ -41,7 +41,7 @@ class Image(models.Model):
     """ 
     name = models.CharField(max_length=50)
     image_path = models.ImageField(upload_to = 'articles/',blank=True)
-    date_taken = models.DateTimeField()
+    date_taken = models.DateField()
     descriptions = models.TextField(blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
