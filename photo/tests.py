@@ -49,3 +49,19 @@ class TestCategory(TestCase):
         categories = Category.objects.all()
 
         self.assertTrue(len(categories) > 0)
+
+class TestLocation(TestCase):
+    """This defines tests for the behaviours of the location class
+
+    Args:
+        TestCase ([type]): [description]
+    """
+    def setUp(self):
+        """This runs before all the tests do
+        """
+        self.location = Location(name = 'Kiserian')
+
+    def test_instance(self):
+        """This tests whether a created location is an instance of the location class
+        """
+        self.assertTrue(isinstance(self.location,Location))
