@@ -32,6 +32,16 @@ class TestImage(TestCase):
 
         self.assertTrue(len(images)>0)
 
+    def test_add_category(self):
+        """This will check if a category has been added to an image instance
+        """
+        self.assertTrue(self.graduation.category == self.category)
+
+    def test_add_location(self):
+        """This will check if a location has been added to an image instance
+        """
+        self.assertTrue(self.graduation.location == self.location)
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()
