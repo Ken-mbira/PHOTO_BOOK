@@ -12,12 +12,25 @@ class TestImage(TestCase):
     def setUp(self):
         """This will run before every other test does"""
         self.location = Location(name = 'Kiserian')
-        self.graduation = Image(name = 'Graduation', image_path="location", date_taken = datetime.date(2020,1,12),descriptions = 'This is a picture taken during my graduation')
+        self.location.save_location()
+
+        self.category = Category(name = 'Cool')
+        self.category.save_category()
+
+        self.graduation = Image(name = 'Graduation', image_path="location", date_taken = datetime.date(2020,1,12),descriptions = 'This is a picture taken during my graduation',category = self.category,location = self.location)
 
     def test_instance(self):
         """This will check if an instance of the image class is being created
         """
         self.assertTrue(isinstance(self.graduation,Image))
+
+    def test_save_image(self):
+        """This checks if an image instance can be saved to the database
+        """
+        self.graduation.save_image()
+        images = Image.objects.all()
+
+        self.assertTrue(len(images)>0)
 
     def tearDown(self):
         Image.objects.all().delete()
