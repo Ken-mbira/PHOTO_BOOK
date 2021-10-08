@@ -7,5 +7,12 @@ from .forms import ImageForm
 def index(request):
     """This renders the home page
     """
-    form = ImageForm
-    return render(request,'photohtml/index.html',{'form':form}) 
+    return render(request,'photohtml/index.html') 
+
+def images(request):
+    """This will render the images page
+
+    Args:
+        request ([type]): [description]
+    """
+    return render(request,'photohtml/images.html')
