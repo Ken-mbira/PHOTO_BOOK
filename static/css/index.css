@@ -1,3 +1,9 @@
-* {
-    display: none;
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    -webkit-text-stroke: 0.9px black;
+}
+
+.nav-special {
+    color: white;
+    -webkit-text-stroke: 0.9px black;
 }
