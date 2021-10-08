@@ -9,10 +9,11 @@
     <title>Document</title>
     {% block styles %} {% bootstrap_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}"> {% endblock %}
-    <link rel="icon" type="image" href="{% static 'images/Logo.png' %}" </head>
+    <link rel="icon" type="image" href="{% static 'images/Logo.png' %}">
+</head>
 
-    <body>
-        {% include 'photohtml/navbar.html' %} {% block content %} {% endblock %} {% block script %}{% bootstrap_javascript %}{% endblock %}
-    </body>
+<body>
+    {% include 'photohtml/navbar.html' %} {% block content %} {% endblock %} {% block script %}{% bootstrap_javascript %}{% endblock %}
+</body>
 
 </html>
