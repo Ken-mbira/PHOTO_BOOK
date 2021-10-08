@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
 .navbar-light .navbar-nav .nav-link {
     color: white;
     -webkit-text-stroke: 0.9px black;
@@ -6,4 +7,16 @@
 .nav-special {
     color: white;
     -webkit-text-stroke: 0.9px black;
+}
+
+.call-to-action {
+    font-family: 'Barriecito', cursive;
+    font-size: 10vmin;
+    color: white;
+}
+
+.landing {
+    height: 120vh;
+    display: flex;
+    align-items: center;
 }
