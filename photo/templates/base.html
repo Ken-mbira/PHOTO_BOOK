@@ -13,7 +13,9 @@
 </head>
 
 <body>
-    {% include 'photohtml/navbar.html' %} {% block content %} {% endblock %} {% block script %}{% bootstrap_javascript %}{% endblock %}
+    {% include 'photohtml/navbar.html' %} {% block content %} {% endblock %} {% block script %} {% bootstrap_javascript %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/index.js' %}"></script>{% endblock %}
 </body>
 
 </html>
