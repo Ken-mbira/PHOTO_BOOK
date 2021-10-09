@@ -1,8 +1,10 @@
+import json
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 
 from .forms import ImageForm
 from .models import Image
+from django.core import serializers
 
 
 def index(request):
@@ -17,5 +19,6 @@ def images(request):
         request ([type]): [description]
     """
     images = Image.objects.all()
-    image1 = Image.objects.first()
-    return render(request,'photohtml/images.html',{'images':images,"image1":image1})
+    dataholder = serializers.serialize("json",images)
+    data = json.dumps(dataholder)
+    return render(request,'photohtml/images.html',{'images':images,"data":data})

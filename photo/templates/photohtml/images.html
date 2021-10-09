@@ -1,25 +1,35 @@
-{% extends 'base.html' %}{% load static %}{% block content %}
+{% extends 'base.html' %}{% load static %} {% block content %}
 <div class="container-fluid landing" style="background-color: #443730;">
     <div class="family col-md-3">
         {% for image in images %}
         <div class="image">
-            <p>{{ image.name }}</p>
-            <img src="{{ image.image_path.url }}" width="300px">
+            <img src="{{ image.image_path.url }}" width="300px" value="{{data}}" id="{{ forloop.counter0 }}">
         </div>
         {% endfor %}
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:100vw;">
             <div class="modal-dialog modal-dialog-centered modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                        <h5 class="modal-title"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <img src="{{ image1.image_path.url }}" class="modal-img" width="100%">
+                    <div class="modal-body" style="position: relative">
+                        <div class="accordion-flush" id="accordionFlushExample" style="z-index:1;position: absolute;opacity:0.8;width: 95%">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Details</button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>Description: <span id="image-description"></span></p>
+                                        <p>Date taken: <span id="date-taken"></span></p>
+                                        <p>Category: <span id="image-category"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="" class="modal-img" width="100%">
                     </div>
                 </div>
             </div>
