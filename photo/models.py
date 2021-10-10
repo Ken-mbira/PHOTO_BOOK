@@ -14,6 +14,11 @@ class Category(models.Model):
         """
         self.save()
 
+    def delete_category(self):
+        """This removes a category from the database
+        """
+        self.delete()
+
     def __str__(self):
         return self.name
 
