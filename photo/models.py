@@ -1,5 +1,5 @@
 from django.db import models
-from tkinter import Tk
+from tk import Tk
 
 class Category(models.Model):
     """This defines the category table and all its contents and behaviours
@@ -120,16 +120,5 @@ class Image(models.Model):
         """
         images = cls.objects.filter(name__icontains = search_term)
         return images
-
-    def copy_to_clipboard(self):
-        """This will copy the image link to the clipboard
-        """
-        r = Tk()
-        r.withdraw()
-        r.clipboard_clear()
-        r.clipboard_append(self.image_path.url)
-        r.update()
-        r.destroy()
-
         
 

@@ -90,21 +90,6 @@ class TestImage(TestCase):
 
         self.assertEqual(images[0],self.graduation)
 
-    def test_copy_image_link(self):
-        """This will test whether an image link can be copied to the clipboard
-        """
-        self.location.save_location()
-        self.category.save_category()
-        self.graduation.save_image()
-        self.graduation.copy_to_clipboard()
-
-        r = Tk()
-        r.withdraw()
-        copied = r.clipboard_get()
-        r.destroy()
-
-        self.assertEqual(copied,self.graduation.image_path.url)
-
 
     def tearDown(self):
         Image.objects.all().delete()
