@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block content %}
+<div class="container-fluid images">
+    {% for image in images %}
+    <a href="{% url 'image' image.pk %}">
+        <div class="image" style="background-color:#ffffff;padding:5px;width:fit-content;margin: 2px;">
+            <img src="{{ image.image_path.url }}" value="{{data}}" id="{{ forloop.counter0 }}">
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

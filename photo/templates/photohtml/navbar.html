@@ -14,10 +14,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav-special" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Family</a></li>
-                            <li><a class="dropdown-item" href="#">Travel</a></li>
-                            <li><a class="dropdown-item" href="#">Friends</a></li>
-                            <li><a class="dropdown-item" href="#">Gaming</a></li>
+                            {% for category in categories %}
+                            <li><a class="dropdown-item" href="{% url 'category' category.pk %}">{{ category.name }}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li class="nav-item">
