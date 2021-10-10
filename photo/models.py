@@ -1,5 +1,4 @@
 from django.db import models
-from tk import Tk
 
 class Category(models.Model):
     """This defines the category table and all its contents and behaviours
