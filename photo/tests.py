@@ -147,6 +147,15 @@ class TestLocation(TestCase):
 
         self.assertTrue(len(locations) > 0)
 
+    def test_delete_location(self):
+        """This checks whether the delete category method works
+        """
+        self.location.save_location()
+        self.location.delete_location()
+        locations = Category.objects.all()
+
+        self.assertTrue(len(locations) == 0)
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()

@@ -35,6 +35,11 @@ class Location(models.Model):
         """
         self.save()
 
+    def delete_location(self):
+        """This removes a location from the database
+        """
+        self.delete()
+
     def __str__(self):
         return self.name
 
