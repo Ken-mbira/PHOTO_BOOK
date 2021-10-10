@@ -34,6 +34,18 @@ def image_spec(request,pk):
     image = Image.get_image_by_id(pk)
     return render(request,"photohtml/image.html",{"image":image,"categories":categories})
 
+def image_spec_copy(request,pk):
+    """This will render the page containing a specific image
+
+    Args:
+        request ([type]): [description]
+        pk ([int]): [This is the primary key of the image]
+    """
+    categories = Category.objects.all()
+    image = Image.get_image_by_id(pk)
+    image.copy_to_clipboard()
+    return render(request,"photohtml/image.html",{"image":image,"categories":categories})
+
 def image_category(request,pk):
     """This will render a page containing the specific category asked for
 
