@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: white;
     -webkit-text-stroke: 0.9px black;
