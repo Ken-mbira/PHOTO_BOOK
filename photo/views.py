@@ -38,3 +38,4 @@ def image_spec(request,pk):
 #         request ([type]): [description]
 #         pk ([type]): [description]
 #     """
+#     images = Image.get_image_by_category()
