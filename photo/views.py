@@ -30,4 +30,5 @@ def image_spec(request,pk):
         request ([type]): [description]
         pk ([int]): [This is the primary key of the image]
     """
-    return render(request,"photohtml/image.html",{"pk":pk})
+    image = Image.get_image_by_id(pk)
+    return render(request,"photohtml/image.html",{"image":image})
