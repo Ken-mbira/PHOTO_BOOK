@@ -1,7 +1,9 @@
 {% extends 'base.html' %}{% block content %}
-<div class="container-fluid" style="height:90vh;display:flex; justify-content:center;align-items:center;">
-    <div style="background-color: white; padding: 5px;">
-        <img class="img-fluid image" src="{{ image.image_path.url }}">
+<div class="container">
+    <div class="card">
+        <div class="image">
+            <img src="{{ image.image_path.url }}" class="img-thumbnail">
+        </div>
     </div>
 </div>
 <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="opacity:0.8">
