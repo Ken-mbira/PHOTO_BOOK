@@ -45,3 +45,11 @@ def image_category(request,pk):
     images = Image.get_image_by_category(pk)
 
     return render(request,'photohtml/image_category.html',{"images":images,"categories":categories})
+
+# def search_images(request,search_term):
+#     """This will return the 
+
+#     Args:
+#         request ([type]): [description]
+#         search_term ([type]): [description]
+#     """

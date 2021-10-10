@@ -78,6 +78,17 @@ class TestImage(TestCase):
 
         self.assertEqual(images[0],self.graduation) 
 
+    def test_get_image_by_name(self):
+        """This will check the search functionality
+        """
+        self.location.save_location()
+        self.category.save_category()
+        self.graduation.save_image()
+
+        images = Image.get_image_by_name('Grad')
+
+        self.assertEqual(images[0],self.graduation)
+
 
     def tearDown(self):
         Image.objects.all().delete()

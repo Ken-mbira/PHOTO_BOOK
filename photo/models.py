@@ -109,3 +109,13 @@ class Image(models.Model):
         """
         images = Image.objects.filter(category__pk = pk)
         return images
+
+    @classmethod
+    def get_image_by_name(cls,search_term):
+        """This will return images provided they match the criteria provided in the search term
+
+        Args:
+            search_term ([type]): [description]
+        """
+        images = cls.objects.filter(name__icontains = search_term)
+        return images
