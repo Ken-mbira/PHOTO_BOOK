@@ -19,6 +19,16 @@ class Category(models.Model):
         """
         self.delete()
 
+    def update_category(self,new):
+        """This will update a category
+
+        Args:
+            new ([type]): [description]
+        """
+        self.name = new.name
+        self.description = new.description
+        self.save()
+
     def __str__(self):
         return self.name
 

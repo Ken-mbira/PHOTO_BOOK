@@ -118,6 +118,16 @@ class TestCategory(TestCase):
 
         self.assertTrue(len(categories) == 0)
 
+    def test_update_category(self):
+        """This will check whether the update categoru method works
+        """
+        self.category1.save_category()
+        new_category = Category(name = 'Another',description = '')
+
+        self.category1.update_category(new_category)
+
+        self.assertTrue(self.category1.name == 'Another')
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()
