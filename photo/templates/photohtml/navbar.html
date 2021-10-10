@@ -23,8 +23,8 @@
                         <a class="nav-link nav-special" href="#">Locations</a>
                     </li>
                 </ul>
-                <form class="d-flex ">
-                    <input class="form-control me-2 " type="search " placeholder="Search Image" aria-label="Search ">
+                <form class="d-flex" role="search" action="{% url 'search' %}">
+                    <input class="form-control me-2 " type="search " placeholder="Search Image" aria-label="Search " name="image">
                     <button class="btn nav-special " type="submit ">Search</button>
                 </form>
             </div>

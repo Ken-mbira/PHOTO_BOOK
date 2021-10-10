@@ -1,0 +1,20 @@
+{% extends 'base.html' %}{% load static %} {% block content %} {% if images %}
+<div class="container images">
+    <p>Found {{images|length}} of term {{message}}</p>
+    <div class="row">
+        {% for image in images %}
+        <a href="{% url 'image' image.pk %}" class="col-md-4" style="margin-top:10px">
+            <div class="card" width="400px">
+                <div class="image">
+                    <img src="{{ image.image_path.url }}" class="img-thumbnail">
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <p>Found 0 images for the term {{message}}</p>
+</div>
+{% endif %} {% endblock %}
