@@ -67,6 +67,18 @@ class TestImage(TestCase):
 
         self.assertEqual(self.graduation.name,'marriage')
 
+    def test_get_image_by_category(self):
+        """This will test the method to get the images by their category
+        """
+        self.location.save_location()
+        self.category.save_category()
+        self.graduation.save_image()
+
+        images = self.graduation.get_image_by_category(1)   
+
+        self.assertEqual(images[0],self.graduation) 
+
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()

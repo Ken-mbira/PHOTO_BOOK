@@ -30,3 +30,11 @@ def image_spec(request,pk):
     """
     image = Image.get_image_by_id(pk)
     return render(request,"photohtml/image.html",{"image":image})
+
+# def image_category(request,pk):
+#     """This will render a page containing the specific category asked for
+
+#     Args:
+#         request ([type]): [description]
+#         pk ([type]): [description]
+#     """

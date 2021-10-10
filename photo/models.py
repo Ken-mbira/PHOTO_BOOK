@@ -77,3 +77,9 @@ class Image(models.Model):
         self.category = new.category
         self.location = new.location
         self.save()
+
+    def get_image_by_category(self,pk):
+        """This method will return all the images that fall in a described category
+        """
+        images = Image.objects.filter(category__pk = pk)
+        return images
