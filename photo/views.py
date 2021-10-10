@@ -22,3 +22,12 @@ def images(request):
     dataholder = serializers.serialize("json",images)
     data = json.dumps(dataholder)
     return render(request,'photohtml/images.html',{'images':images,"data":data})
+
+def image_spec(request,pk):
+    """This will render the page containing a specific image
+
+    Args:
+        request ([type]): [description]
+        pk ([int]): [This is the primary key of the image]
+    """
+    return render(request,"photohtml/image.html",{"pk":pk})

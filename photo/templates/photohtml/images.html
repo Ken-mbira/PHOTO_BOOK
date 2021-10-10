@@ -5,32 +5,5 @@
         <img src="{{ image.image_path.url }}" value="{{data}}" id="{{ forloop.counter0 }}">
     </div>
     {% endfor %}
-    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="width:100vw;">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="accordion-flush" id="accordionFlushExample" style="position: relative">
-                        <div class="accordion-item" style="z-index:1;position: absolute;opacity:0.8;width: 100%">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Details</button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <p>Description: <span id="image-description"></span></p>
-                                    <p>Date taken: <span id="date-taken"></span></p>
-                                    <p>Category: <span id="image-category"></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img src="" class="modal-img" width="100%">
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock %}
