@@ -9,7 +9,6 @@ urlpatterns = [
     path('',views.index,name = 'home'),
     path('images/',views.images,name = 'images'),
     path('images/<int:pk>',views.image_spec,name = 'image'),
-    path('images/copy/<int:pk>',views.image_spec_copy,name = 'image_copy'),
     path('category/<int:pk>',views.image_category,name = 'category'),
     path('search',views.search_images, name="search")
 ]
