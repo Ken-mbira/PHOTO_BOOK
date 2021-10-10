@@ -50,6 +50,12 @@ class Location(models.Model):
         """
         self.delete()
 
+    def update_location(self,new):
+        """This updates the content of the location
+        """
+        self.name = new.name
+        self.save()
+
     def __str__(self):
         return self.name
 

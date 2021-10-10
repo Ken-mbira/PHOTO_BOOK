@@ -166,6 +166,15 @@ class TestLocation(TestCase):
 
         self.assertTrue(len(locations) == 0)
 
+    def test_update_location(self):
+        """This checks whether the update location method works
+        """
+        self.location.save()
+        new_location = Location(name = "Nairobi")
+        self.location.update_location(new_location)
+
+        self.assertEqual(self.location.name,"Nairobi")
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()
