@@ -42,7 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo',
     'bootstrap5',
+    'cloudinary',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'duykqvfcr',
+    'API_KEY': '971895381824775',
+    'API_SECRET': 'ezLqru8azOOSL8RTgylS-FRZIxQ'
+}	
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

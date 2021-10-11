@@ -1,5 +1,7 @@
 from django.db import models
 
+from cloudinary.models import CloudinaryField
+
 class Category(models.Model):
     """This defines the category table and all its contents and behaviours
 
@@ -66,7 +68,7 @@ class Image(models.Model):
         models ([module]): [This is where we import the model functionality]
     """ 
     name = models.CharField(max_length=50)
-    image_path = models.ImageField(upload_to = 'articles/',blank=True)
+    image_path = CloudinaryField('image')
     date_taken = models.DateField()
     descriptions = models.TextField(blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
