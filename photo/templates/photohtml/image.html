@@ -18,8 +18,24 @@
                 <p><b>Location:</b> {{image.location.name}}</p>
                 <p><b>Category:</b> {{image.category.name}}</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="display:flex;justify-content:space-between;">
+                <button class="btn btn-secondary" id="copy-link" value="{{image.image_path.url}}">Copy link</button>
                 <small>{{image.date_taken}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="success-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-primary" role="alert">
+                    Success, the image link was copied
+                </div>
             </div>
         </div>
     </div>
