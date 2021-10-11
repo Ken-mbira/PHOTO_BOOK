@@ -1,4 +1,4 @@
-{% extends 'base.html' %}{% load static %} {% block content %} {% if images %}
+{% extends 'base.html' %}{% load static %} {% load cloudinary %}{% block content %} {% if images %}
 <div class="container images">
     <p>Found {{images|length}} of term {{message}}</p>
     <div class="row">
