@@ -51,7 +51,9 @@
     <li>Upon successful completion of the above, the application is ready to launch in the local server, run <code>python3 manage.py runserver</code></li>
 <ul>
 </div>
-
+<div>
+    <p>The application is currently in production and you can view the live site <a href="https://pichamtandaoni.herokuapp.com/">here.</a></p>
+</div>
 <div>
     <h2>Known Bugs</h2>
     <p>Currently the app is working as expected but as always you are free to give suggestions and point out errors</p>
@@ -66,6 +68,8 @@
     </ol>
 </div>
 <div>
+<h2>Licence Information</h2>
+
     MIT License
 
 Copyright (c) [2021] [Ken-Mbira]
